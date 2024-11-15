@@ -1,0 +1,29 @@
+﻿<Window x:Class="LoafDemo.Window3"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LoafDemo"
+        xmlns:wv2="clr-namespace:Microsoft.Web.WebView2.Wpf;assembly=Microsoft.Web.WebView2.Wpf"
+        mc:Ignorable="d"
+        Title="Window3"
+        Height="450"
+        Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="28" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0"
+                    Orientation="Horizontal">
+            <Button Content="后退" Click="Button_Click" />
+            <Button Content="前进" Click="Button_Click_1" />
+            <TextBox Width="200" x:Name="urlTextBox"/>
+            <Button Content="Go" Click="Button_Click_2"/>
+            <Button Content="刷新" Click="Button_Click_3"/>
+        </StackPanel>
+        <wv2:WebView2 Grid.Row="1"
+                      x:Name="webView2"
+                      Source="https://www.cnblogs.com" />
+    </Grid>
+</Window>

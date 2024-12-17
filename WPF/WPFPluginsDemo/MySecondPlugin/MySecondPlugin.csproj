@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <OutputPath>C:\Users\sofar\Desktop\WPF-Plugins-main\WPF-Plugins-main\MyWpfApp\bin\Debug\net8.0-windows\Plugins</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\EventAggregator\EventAggregator.csproj" />
+    <ProjectReference Include="..\MyPluginInterface\MyPluginInterface.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\MySecondPluginView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+
+</Project>

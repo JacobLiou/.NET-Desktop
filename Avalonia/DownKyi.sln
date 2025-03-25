@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DownKyi", "DownKyi\DownKyi.csproj", "{545334D8-F429-47C1-99A7-A25EAC17D76A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DownKyi.Core", "DownKyi.Core\DownKyi.Core.csproj", "{153A9B2C-7494-411C-BA0A-121A1024C08E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaApplication1", "AvaloniaApplication1\AvaloniaApplication1.csproj", "{46F455A8-CF07-464F-84DD-32787E42FA95}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{545334D8-F429-47C1-99A7-A25EAC17D76A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{545334D8-F429-47C1-99A7-A25EAC17D76A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{545334D8-F429-47C1-99A7-A25EAC17D76A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{545334D8-F429-47C1-99A7-A25EAC17D76A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{153A9B2C-7494-411C-BA0A-121A1024C08E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{153A9B2C-7494-411C-BA0A-121A1024C08E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{153A9B2C-7494-411C-BA0A-121A1024C08E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{153A9B2C-7494-411C-BA0A-121A1024C08E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46F455A8-CF07-464F-84DD-32787E42FA95}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46F455A8-CF07-464F-84DD-32787E42FA95}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46F455A8-CF07-464F-84DD-32787E42FA95}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46F455A8-CF07-464F-84DD-32787E42FA95}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

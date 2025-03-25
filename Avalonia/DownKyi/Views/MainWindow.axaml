@@ -1,0 +1,48 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:DownKyi.ViewModels"
+        xmlns:prism="http://prismlibrary.com/"
+        x:Class="DownKyi.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        prism:ViewModelLocator.AutoWireViewModel="True"
+        Width="1100"
+        Height="750"
+        MinWidth="800"
+        MinHeight="550"
+        Title="{DynamicResource AppName}"
+        Icon="/Resources/favicon.ico"
+        xmlns:i="using:Avalonia.Xaml.Interactivity"
+        xmlns:ia="clr-namespace:Avalonia.Xaml.Interactions.Core;assembly=Avalonia.Xaml.Interactions"
+        WindowState="{Binding WinState}">
+
+    <i:Interaction.Behaviors>
+        <ia:EventTriggerBehavior EventName="Closing">
+            <ia:InvokeCommandAction Command="{Binding ClosingCommand}" />
+        </ia:EventTriggerBehavior>
+        <ia:EventTriggerBehavior EventName="Opened">
+            <ia:InvokeCommandAction Command="{Binding LoadedCommand}" />
+        </ia:EventTriggerBehavior>
+    </i:Interaction.Behaviors>
+    <Grid RowDefinitions="*">
+        <ContentControl prism:RegionManager.RegionName="ContentRegion" />
+
+        <Border
+            MinHeight="30"
+            Margin="0,0,0,20"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom"
+            Background="{DynamicResource BrushBackgroundDark}"
+            CornerRadius="15"
+            IsVisible="{Binding MessageVisibility}">
+            <TextBlock
+                Margin="15,5,15,5"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Background="{x:Null}"
+                FontSize="12"
+                Foreground="{DynamicResource BrushForegroundDark}"
+                Text="{Binding Message}"
+                TextAlignment="Center" />
+        </Border>
+    </Grid>
+</Window>

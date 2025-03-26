@@ -1,0 +1,39 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+    <DefineConstants>SYSTEM_PRIVATE_CORELIB;</DefineConstants>
+
+    <PackageIcon>Assets\logo.png</PackageIcon>
+    <PackageTags>csharp,library,toolkit,toolbox,multi-platform</PackageTags>
+    <PackageDescription>支持netstandard2.0+的跨平台工具包</PackageDescription>
+    <PackageReleaseNotes>支持netstandard2.0+的跨平台工具包，发布的预览版，其它功能敬请期待</PackageReleaseNotes>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.7.0" />
+    <PackageReference Include="Microsoft.Extensions.Options.DataAnnotations" Version="7.0.0" />
+    <!--<PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />-->
+    <PackageReference Include="System.CodeDom" Version="7.0.0" />
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="7.0.0" />
+    <PackageReference Include="System.Diagnostics.PerformanceCounter" Version="7.0.0" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.0" />
+    <PackageReference Include="System.Reflection.Emit" Version="4.7.0" />
+    <PackageReference Include="System.Reflection.Emit.Lightweight" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\.editorconfig" Link=".editorconfig" />
+    <None Include="logo.png" Pack="true" PackagePath="Assets\logo.png" Visible="false" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\Attributes\" />
+    <Folder Include="Data\Converters\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Net.Http" Condition="$(TargetFramework.StartsWith(net4))" />
+  </ItemGroup>
+
+</Project>

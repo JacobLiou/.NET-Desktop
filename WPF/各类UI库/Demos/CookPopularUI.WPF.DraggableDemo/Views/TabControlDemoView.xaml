@@ -1,0 +1,126 @@
+﻿<UserControl x:Class="CookPopularUI.WPF.DraggableDemo.Views.TabControlDemoView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:CookPopularUI.WPF.DraggableDemo.Views"
+             xmlns:app="clr-namespace:CookPopularUI.WPF.DraggableDemo"
+             xmlns:ui="https://github.cookpopularui/2021/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             d:DesignHeight="450"
+             d:DesignWidth="800">
+
+    <Grid Margin="10,0">
+        <Grid.RowDefinitions>
+            <RowDefinition />
+            <RowDefinition Height="20" />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition />
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <TabControl x:Name="tab1" Grid.Row="0" Grid.Column="0"
+                    TabStripPlacement="Top"
+                    ui:DragDropData.IsDragSource="True"
+                    ui:DragDropData.IsDropTarget="True"
+                    ui:DragDropData.DataProvider="{x:Static app:Data.TabControlDataProvider}"
+                    ui:DragDropData.DataConsumer="{x:Static app:Data.TabControlDataConsumer}">
+            <TabItem Header="TitleTop1">
+                <TextBlock>
+                    First Document<LineBreak />
+                    Drag it</TextBlock>
+            </TabItem>
+            <TabItem Header="TitleTop2">
+                <TextBlock>
+                    Second Document<LineBreak />
+                    Drag it</TextBlock>
+            </TabItem>
+            <TabItem Header="TitleTop3">
+                <TextBlock>
+                    Third Document<LineBreak />
+                    Drag it</TextBlock>
+            </TabItem>
+        </TabControl>
+        <TabControl x:Name="tab2" Grid.Row="0" Grid.Column="2"
+                    TabStripPlacement="Bottom"
+                    ui:DragDropData.IsDragSource="True"
+                    ui:DragDropData.IsDropTarget="True"
+                    ui:DragDropData.DataProvider="{x:Static app:Data.TabControlDataProvider}"
+                    ui:DragDropData.DataConsumer="{x:Static app:Data.TabControlDataConsumer}">
+            <TabItem Header="TitleBottom1">
+                <TextBlock>
+                    First Document<LineBreak />
+                    Drag it</TextBlock>
+            </TabItem>
+            <TabItem Header="TitleBottom2">
+                <TextBlock>
+                    Second Document<LineBreak />
+                    Drag it</TextBlock>
+            </TabItem>
+            <TabItem Header="TitleBottom3">
+                <TextBlock>
+                    Third Document<LineBreak />
+                    Drag it</TextBlock>
+            </TabItem>
+        </TabControl>
+
+        <TabControl x:Name="tab3" Grid.Row="2" Grid.Column="0"
+                    TabStripPlacement="Left"
+                    ui:DragDropData.IsDragSource="True"
+                    ui:DragDropData.IsDropTarget="True"
+                    ui:DragDropData.DataProvider="{x:Static app:Data.TabControlDataProvider}"
+                    ui:DragDropData.DataConsumer="{x:Static app:Data.TabControlDataConsumer}">
+            <TabItem Header="TitleLeft1">
+                <TextBlock>
+                    First Document<LineBreak />
+                    Drag it</TextBlock>
+            </TabItem>
+            <TabItem Header="TitleLeft2">
+                <TextBlock>
+                    Second Document<LineBreak />
+                    Drag it</TextBlock>
+            </TabItem>
+            <TabItem Header="TitleLeft3">
+                <TextBlock>
+                    Third Document<LineBreak />
+                    Drag it</TextBlock>
+            </TabItem>
+        </TabControl>
+        <TabControl x:Name="tab4" Grid.Row="2" Grid.Column="2"
+                    TabStripPlacement="Right"
+                    ui:DragDropData.IsDragSource="True"
+                    ui:DragDropData.IsDropTarget="True"
+                    ui:DragDropData.DataProvider="{x:Static app:Data.TabControlDataProvider}"
+                    ui:DragDropData.DataConsumer="{x:Static app:Data.TabControlDataConsumer}">
+            <TabItem Header="TitleRight1">
+                <TextBlock>
+                    First Document<LineBreak />
+                    Drag it</TextBlock>
+            </TabItem>
+            <TabItem Header="TitleRight2">
+                <TextBlock>
+                    Second Document<LineBreak />
+                    Drag it</TextBlock>
+            </TabItem>
+            <TabItem Header="TitleRight3">
+                <TextBlock>
+                    Third Document<LineBreak />
+                    Drag it</TextBlock>
+            </TabItem>
+        </TabControl>
+
+        <Border Grid.Column="4"
+                Grid.RowSpan="3"
+                BorderBrush="Red" BorderThickness="1"
+                Background="#FFF4F4"
+                ui:DragDropData.DataConsumer="{x:Static app:Data.TrashConsumer}"
+                ui:DragDropData.IsDropTarget="True">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">TRASH!</TextBlock>
+        </Border>
+    </Grid>
+
+</UserControl>

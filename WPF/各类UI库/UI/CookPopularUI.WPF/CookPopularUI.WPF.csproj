@@ -1,0 +1,79 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFrameworks>net48;net6.0-windows</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>false</UseWindowsForms>
+    <!--<DefineConstants>USE_ORIGIN_WPF_XMLNAMESPACE</DefineConstants>-->
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetsForTfmSpecificBuildOutput>$(TargetsForTfmSpecificBuildOutput);PackFiles</TargetsForTfmSpecificBuildOutput>
+    <BuildOutputInPackage>true</BuildOutputInPackage>
+    <Copyright>Copyright © CookCSharp 2021 All rights reserved.</Copyright>
+    <PackageIcon>Assets\nuget-logo.png</PackageIcon>
+    <PackageReadmeFile>Assets\readme.md</PackageReadmeFile>
+    <PackageTags>xaml,wpf,ui,controls,windows,desktop,cookpopularui,library</PackageTags>
+    <PackageDescription>支持.NET462+、.NETCore3.1、.NET6.0+的WPF控件库，目前含有100多款常用控件</PackageDescription>
+    <PackageReleaseNotes>提供了100多款常用控件</PackageReleaseNotes>
+    <!--<PackAsTool>True</PackAsTool>-->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Common\Effects\DirectionalBlurEffect.ps" />
+    <None Remove="Common\Effects\DropShadowExEffect.ps" />
+    <None Remove="Resources\Dropper.cur" />
+    <None Remove="Resources\Images\trayicon-transparent.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Language.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Language.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Language.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Language.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <Page Update="Properties\DesignTimeResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Controls\ControlBar\ProcessBar\" />
+    <Folder Include="Controls\ControlGroup\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Common\Effects\DirectionalBlurEffect.ps" />
+    <Resource Include="Common\Effects\DropShadowExEffect.ps" />
+    <Resource Include="Resources\Dropper.cur" />
+    <Resource Include="Resources\Images\trayicon-transparent.ico" />
+
+  </ItemGroup>
+
+  <ItemGroup>
+    <!--将资源打包到nuget包中-->
+    <None Include="Resources\Images\nuget-logo.png" Pack="true" Visible="false" PackagePath="Assets\nuget-logo.png" />
+    <None Include="..\..\readme.md" Pack="true" PackagePath="Assets\readme.md"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Tookit\CookPopularToolkit.Windows\CookPopularToolkit.Windows.csproj" />
+  </ItemGroup>
+
+  <!--只能将dll,xml打包到nuget包的lib中-->
+  <Target Name="PackFiles">
+    <!--<ItemGroup>
+      <BuildOutputInPackage Include="$(OutputPath)*.xml" />
+    </ItemGroup>-->
+  </Target>
+
+</Project>
